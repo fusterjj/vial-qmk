@@ -38,7 +38,6 @@
 
 // Indicators and drop lighting
 #ifdef RGBLIGHT_ENABLE
-    #warning "hello"
     #define RGBLIGHT_SLEEP
     #define RGBLIGHT_LAYERS
     #define RGBLIGHT_LIMIT_VAL 120

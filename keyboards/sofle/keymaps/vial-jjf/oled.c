@@ -34,10 +34,10 @@ static void print_status_narrow(void) {
     oled_write_P(PSTR("\n\n"), false);
 
     switch (get_highest_layer(layer_state)) {
-        case 0:
+        case _QWERTY:
             oled_write_ln_P(PSTR("Qwrt"), false);
             break;
-        case 1:
+        case _COLEMAK:
             oled_write_ln_P(PSTR("Clmk"), false);
             break;
         default:
@@ -48,22 +48,25 @@ static void print_status_narrow(void) {
     // Print current layer
     oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
-        case 0:
-        case 1:
+        case _QWERTY:
+        case _COLEMAK:
             oled_write_P(PSTR("Base\n"), false);
             break;
-        case 2:
-            oled_write_P(PSTR("Raise"), false);
+        case _SYM:
+            oled_write_P(PSTR("Sym"), false);
             break;
-        case 3:
-            oled_write_P(PSTR("Lower"), false);
+        case _NAV:
+            oled_write_P(PSTR("Nav"), false);
+            break;
+        case _MEDIA:
+            oled_write_P(PSTR("Med"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
     }
-    oled_write_P(PSTR("\n\n"), false);
-    led_t led_usb_state = host_keyboard_led_state();
-    oled_write_ln_P(PSTR("CPSLK"), led_usb_state.caps_lock);
+    //oled_write_P(PSTR("\n\n"), false);
+    //led_t led_usb_state = host_keyboard_led_state();
+    //oled_write_ln_P(PSTR("CPSLK"), led_usb_state.caps_lock);
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {

@@ -16,8 +16,10 @@
 
 #include "sofle.h"
 
-// With all LEDs popualted
+#ifdef RGB_MATRIX_ENABLE
+// With all LEDs populated
 #if 0
+  #warning "what???"
   // Physical Layout
   // Columns
   // 0  1  2  3  4  5  6  7  8  9  10 11 12 13
@@ -150,4 +152,5 @@ led_config_t g_led_config = {
         LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT
     }
 };
+#endif
 #endif
