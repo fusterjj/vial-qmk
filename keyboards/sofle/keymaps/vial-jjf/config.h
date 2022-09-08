@@ -27,6 +27,8 @@
 #define VIAL_UNLOCK_COMBO_ROWS { 0, 5, 3, 8 }
 #define VIAL_UNLOCK_COMBO_COLS { 0, 0, 0, 0 }
 
+#define DYNAMIC_KEYMAP_LAYER_COUNT 5
+
 // Trying to save space
 #define NO_ACTION_TAPPING
 #define NO_ACTION_ONESHOT
